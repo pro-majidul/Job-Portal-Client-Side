@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+    const { user, setUser, logoutUser } = useContext(AuthContext);
 
+    const handelLogout = () => {
+        logoutUser()
+            .then(res => {
+                console.log(res);
+                setUser(res)
+                toast.success('user logout')
+            })
+            .catch(error => {
+                toast.error(`${error.message}`)
+            })
+    }
 
     const Links = (<>
 
@@ -53,8 +67,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-                <Link to='/login'><button className='btn md:btn-md btn-sm'>Login</button></Link>
-                <Link to='/register'><button className='btn md:btn-md btn-sm'>Register</button></Link>
+                {
+                    user && user ? <>
+                        <button onClick={handelLogout} className="btn">Log Out</button>
+                    </> : <>
+                        <Link to='/login'><button className='btn md:btn-md btn-sm'>Login</button></Link>
+                        <Link to='/register'><button className='btn md:btn-md btn-sm'>Register</button></Link>
+                    </>
+                }
             </div>
         </div>
     );
