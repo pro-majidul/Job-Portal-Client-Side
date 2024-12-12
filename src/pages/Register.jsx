@@ -18,9 +18,6 @@ const {createUser , setUser}= useContext(AuthContext)
             name, email, password, photo
         }
 
-        // console.log(info);
-
-        // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         const lowercaseRegex = /[a-z]/;
         const uppercaseRegex = /[A-Z]/;
         if (password.length < 6) {

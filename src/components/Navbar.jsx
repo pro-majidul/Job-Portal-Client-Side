@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
+import jobImg from '../assets/favicons.png'
 
 const Navbar = () => {
     const { user, setUser, logoutUser } = useContext(AuthContext);
@@ -18,19 +19,11 @@ const Navbar = () => {
             })
     }
 
-    const Links = (<>
+    const Links = (< >
 
-        <li><a>Item 1</a></li>
-        <li>
-            <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
-                </ul>
-            </details>
-        </li>
-        <li><a>Item 3</a></li>
+        <NavLink to='/' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Home</NavLink>
+        <NavLink to='/about' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>About</NavLink>
+        <NavLink to='/product' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Products</NavLink>
     </>)
     return (
         <div className="navbar bg-base-100">
@@ -53,14 +46,27 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        {
+                            user && user ? <>
+                                <div className='w-full flex items-center justify-center'>
+                                    <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                                </div>
+                            </> : <>
+
+                                <NavLink to='/register'><button className='btn w-full'>Register</button></NavLink>
+                            </>
+                        }
                         {Links}
 
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link to='/' className="btn btn-ghost text-xl">
+                    <img className='w-10' src={jobImg} alt="" />
+                    <h3 className='md:text-3xl'>Jobs Portal</h3>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 gap-10">
 
                     {Links}
 
@@ -69,10 +75,13 @@ const Navbar = () => {
             <div className="navbar-end gap-2">
                 {
                     user && user ? <>
+
+                        <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+
                         <button onClick={handelLogout} className="btn">Log Out</button>
                     </> : <>
-                        <Link to='/login'><button className='btn md:btn-md btn-sm'>Login</button></Link>
-                        <Link to='/register'><button className='btn md:btn-md btn-sm'>Register</button></Link>
+                        <Link to='/login'><button className='btn md:btn-md  btn-sm'>Login</button></Link>
+                        <Link to='/register'><button className='btn md:btn-md hidden md:block btn-sm'>Register</button></Link>
                     </>
                 }
             </div>
