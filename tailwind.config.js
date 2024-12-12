@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    backgroundImage : {
+      'bgBanner' : 'url(./bg-banner.svg)',
+    }
   },
   plugins: [
     require('daisyui'),

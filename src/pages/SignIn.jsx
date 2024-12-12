@@ -3,6 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Lottie from 'lottie-react';
 import loginlottie from '../assets/login.json';
 import { toast } from 'react-toastify';
+import Social from '../components/Social';
 
 const SignIn = () => {
 
@@ -53,6 +54,7 @@ const SignIn = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    <Social></Social>
                 </div>
             </div>
         </div>

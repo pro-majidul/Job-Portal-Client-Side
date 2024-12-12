@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
@@ -6,6 +6,7 @@ import jobImg from '../assets/favicons.png'
 
 const Navbar = () => {
     const { user, setUser, logoutUser } = useContext(AuthContext);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handelLogout = () => {
         logoutUser()
@@ -25,8 +26,32 @@ const Navbar = () => {
         <NavLink to='/about' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>About</NavLink>
         <NavLink to='/product' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Products</NavLink>
     </>)
+
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll); // Event listener scroll event detect korche.
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll); // Cleanup event listener to avoid memory leaks.
+        };
+    }, []);
+    
     return (
-        <div className="navbar bg-base-100">
+          // className="navbar bg-transparent transition-all top-0 sticky">
+        <div
+            className={`sticky top-0 navbar z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"
+                }`}
+        >
+      
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +74,7 @@ const Navbar = () => {
                         {
                             user && user ? <>
                                 <div className='w-full flex items-center justify-center'>
-                                    <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                                    <img referrerPolicy='no-referrer' className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
                                 </div>
                             </> : <>
 
@@ -76,7 +101,7 @@ const Navbar = () => {
                 {
                     user && user ? <>
 
-                        <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                        <img referrerPolicy='no-referrer' className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
 
                         <button onClick={handelLogout} className="btn">Log Out</button>
                     </> : <>

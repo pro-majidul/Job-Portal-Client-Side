@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import LottieRegister from '../assets/Animation - 1733940535407.json'
 import { toast } from 'react-toastify';
 import { AuthContext } from '../provider/AuthProvider';
+import Social from '../components/Social';
 
 const Register = () => {
 const {createUser , setUser}= useContext(AuthContext)
@@ -79,6 +80,7 @@ const {createUser , setUser}= useContext(AuthContext)
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                    <Social></Social>
                 </div>
             </div>
         </div>
