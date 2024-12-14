@@ -5,29 +5,29 @@ import bgRight from '../assets/bg-right.svg'
 const Category = () => {
     return (
         <div className='my-5  py-5'>
-            <h3 className='text-xl md:text-3xl text-center my-4 font-semibold'>Browse By Category</h3>
-            <p className='text-center w-8/12 mx-auto text-xl  text-gray-500'>Find the job that’s perfect for you. about 800+ new Jobs everyday</p>
+            <h3 className='text-xl text-[#05264E] hover:text-blue-500 md:text-4xl text-center my-4 font-semibold'>Browse By Category</h3>
+            <p className='text-center w-8/12  mx-auto text-xl  text-gray-500'>Find the job that’s perfect for you. about 800+ new Jobs everyday</p>
             <div className='w-11/12 mx-auto my-5 py-5 md:flex  gap-5  space-y-4 overflow-x-scroll bg-transparent'>
 
-                <div className='border mt-4 w-full max-w-sm transition hover:-translate-y-3 rounded-xl p-6'>
+                <div className='border mt-4 w-full max-w-sm transition hover:-translate-y-3 bg-[#F8FAFF] rounded-xl p-6'>
                     <img src="https://img.icons8.com/?size=48&id=0PTYqcrrBXka&format=png" alt="" />
-                    <h3 className='text-xl hover:text-blue-500 font-medium'>Marketing and Sell</h3>
-                    <p className='font-medium hover:text-blue-600'>1526 Jobs Available</p>
+                    <h3 className='text-xl text-[#05264E] hover:text-blue-500 font-medium'>Marketing and Sell</h3>
+                    <p className='font-medium text-[#05264E] hover:text-blue-600'>1526 Jobs Available</p>
                 </div>
-                <div className='border w-full max-w-sm transition hover:-translate-y-3 rounded-xl p-6'>
+                <div className='border w-full max-w-sm transition hover:-translate-y-3 bg-[#F8FAFF] rounded-xl p-6'>
                     <img src="https://img.icons8.com/?size=48&id=12216&format=png" alt="" />
-                    <h3 className='text-xl hover:text-blue-500 font-medium'>Customer Help</h3>
-                    <p className='font-medium hover:text-blue-600'>185 Jobs Available</p>
+                    <h3 className='text-xl text-[#05264E] hover:text-blue-500 font-medium'>Customer Help</h3>
+                    <p className='font-medium text-[#05264E] hover:text-blue-600'>185 Jobs Available</p>
                 </div>
-                <div className='border w-full max-w-sm transition hover:-translate-y-3 rounded-xl p-6'>
+                <div className='border w-full max-w-sm transition hover:-translate-y-3 bg-[#F8FAFF] rounded-xl p-6'>
                     <img src="https://img.icons8.com/?size=80&id=3vtBJwCeB5xn&format=png" alt="" />
-                    <h3 className='text-xl hover:text-blue-500 font-medium'>Human Resources</h3>
-                    <p className='font-medium hover:text-blue-600'>165 Jobs Available</p>
+                    <h3 className='text-xl text-[#05264E] hover:text-blue-500 font-medium'>Human Resources</h3>
+                    <p className='font-medium text-[#05264E] hover:text-blue-600'>165 Jobs Available</p>
                 </div>
-                <div className='border max-w-sm w-full transition hover:-translate-y-3 rounded-xl p-6'>
+                <div className='border max-w-sm w-full transition hover:-translate-y-3 bg-[#F8FAFF] rounded-xl p-6'>
                     <img src="https://img.icons8.com/?size=64&id=119664&format=png" alt="" />
-                    <h3 className='text-xl hover:text-blue-500 font-medium'>Security Analyst</h3>
-                    <p className='font-medium hover:text-blue-600'>254 Jobs Available</p>
+                    <h3 className='text-xl text-[#05264E] hover:text-blue-500 font-medium'>Security Analyst</h3>
+                    <p className='font-medium text-[#05264E] hover:text-blue-600'>254 Jobs Available</p>
                 </div>
             </div>
 

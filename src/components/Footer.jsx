@@ -3,10 +3,10 @@ import jobImg from '../assets/jobsIcons.png'
 
 const Footer = () => {
     return (
-        <footer className="footer bg-base-200 text-base-content p-10">
+        <footer className="footer  bg-base-200 text-base-content p-10">
             <aside>
                 <img src={jobImg} alt="" />
-                <p>
+                <p className='text-[#05264E] hover:text-blue-500'>
                    Jobs Portal Ltd.
                     <br />
                     Providing reliable jobs since 1992

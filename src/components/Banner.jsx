@@ -24,14 +24,14 @@ const Banner = () => {
                 </div>
                 <div className='flex-1'>
                     <motion.h1
-                        animate={{ x: [0, 50, 0], color: 'green' }}
+                        animate={{ x: [0, 50, 0], color: '#05264E' }}
                         transition={{ duration: 2, delay: 0.9, ease: easeInOut, repeat: Infinity }}
-                        className="text-5xl font-bold">Latest Jobs for you!</motion.h1>
-                    <p className="py-6">
+                        className="text-5xl font-bold ">Latest Jobs for you!</motion.h1>
+                    <p className="py-6 text-[#05264E]">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <button className="btn btn-primary ">Get Started</button>
                 </div>
             </div>
         </div>
