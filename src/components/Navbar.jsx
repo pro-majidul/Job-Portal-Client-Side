@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 import jobImg from '../assets/favicons.png'
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const Navbar = () => {
     const { user, setUser, logoutUser } = useContext(AuthContext);
@@ -44,14 +46,14 @@ const Navbar = () => {
             window.removeEventListener("scroll", handleScroll); // Cleanup event listener to avoid memory leaks.
         };
     }, []);
-    
+
     return (
-          // className="navbar bg-transparent transition-all top-0 sticky">
+        // className="navbar bg-transparent transition-all top-0 sticky">
         <div
             className={`sticky top-0 navbar z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"
                 }`}
         >
-      
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,7 +76,8 @@ const Navbar = () => {
                         {
                             user && user ? <>
                                 <div className='w-full flex items-center justify-center'>
-                                    <img referrerPolicy='no-referrer' className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                                    <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} referrerPolicy='no-referrer' className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                                    <Tooltip id="my-tooltip" />
                                 </div>
                             </> : <>
 
@@ -101,8 +104,8 @@ const Navbar = () => {
                 {
                     user && user ? <>
 
-                        <img referrerPolicy='no-referrer' className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
-
+                        <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} referrerPolicy='no-referrer' className='w-10 h-10 rounded-full hidden md:block' src={user.photoURL} alt="" />
+                        <Tooltip id="my-tooltip" />
                         <button onClick={handelLogout} className="btn">Log Out</button>
                     </> : <>
                         <Link to='/login'><button className='btn md:btn-md  btn-sm'>Login</button></Link>

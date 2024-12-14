@@ -7,9 +7,9 @@ const Category = () => {
         <div className='my-5  py-5'>
             <h3 className='text-xl md:text-3xl text-center my-4 font-semibold'>Browse By Category</h3>
             <p className='text-center w-8/12 mx-auto text-xl  text-gray-500'>Find the job that’s perfect for you. about 800+ new Jobs everyday</p>
-            <div className='w-11/12 mx-auto my-5 py-5 flex gap-3 overflow-x-scroll bg-transparent'>
+            <div className='w-11/12 mx-auto my-5 py-5 md:flex  gap-5  space-y-4 overflow-x-scroll bg-transparent'>
 
-                <div className='border w-full max-w-sm transition hover:-translate-y-3 rounded-xl p-6'>
+                <div className='border mt-4 w-full max-w-sm transition hover:-translate-y-3 rounded-xl p-6'>
                     <img src="https://img.icons8.com/?size=48&id=0PTYqcrrBXka&format=png" alt="" />
                     <h3 className='text-xl hover:text-blue-500 font-medium'>Marketing and Sell</h3>
                     <p className='font-medium hover:text-blue-600'>1526 Jobs Available</p>
@@ -40,7 +40,7 @@ const Category = () => {
 
             }} >
 
-                <div className='flex items-center w-7/12 mx-auto p-6 gap-5 justify-around'>
+                <div className='md:flex items-center w-7/12 mx-auto p-6 gap-5 justify-around'>
                     <h1 className='uppercase'><span className='text-gray-500'>We Are</span> <br /> <span className='text-4xl font-bold text-[#05264e]'>Hiring</span></h1>
                     <p className='w-24 font-medium'> <span className='text-gray-500'>Let’s</span>  Work <span className='text-gray-500'>Together
                     &</span> Explore <span className='text-gray-500'>Opportunities</span></p>
