@@ -4,10 +4,14 @@ import Lottie from 'lottie-react';
 import loginlottie from '../assets/login.json';
 import { toast } from 'react-toastify';
 import Social from '../components/Social';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
 
     const { loginUser, setUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate()
+    const form = location?.state || '/' ;
 
     const handelsignin = (e) => {
         e.preventDefault();
@@ -19,6 +23,8 @@ const SignIn = () => {
                 setUser(result.user)
                 console.log(result.user);
                 toast.success('user login success')
+                navigate(form)
+
 
             }).catch(error => {
                 console.log(error);
