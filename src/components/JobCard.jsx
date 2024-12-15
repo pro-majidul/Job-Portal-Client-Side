@@ -22,7 +22,7 @@ const JobCard = ({ job }) => {
                     </div>
                 </div>
                 <div className="card-body">
-                    <h2 className="card-title text-[#05264E] hover:text-blue-500">{title}<div class="badge badge-secondary">NEW</div></h2>
+                    <h2 className="card-title text-[#05264E] hover:text-blue-500">{title}<div className="badge badge-secondary">NEW</div></h2>
                     <div className='flex items-center justify-between'>
                         <p className='flex items-center gap-1 text-md text-gray-400 font-normal'> <TiShoppingBag />{jobType}</p>
                         <p className='flex items-center gap-1 text-md text-gray-400 font-normal'> <IoMdTime /> {applicationDeadline}</p>

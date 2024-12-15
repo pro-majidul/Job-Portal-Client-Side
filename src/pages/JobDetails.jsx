@@ -1,14 +1,15 @@
 import React from 'react';
-import { GiSkills } from 'react-icons/gi';
+import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { GiSkills, GiVampireDracula } from 'react-icons/gi';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi';
 import { IoMdTime } from 'react-icons/io';
 import { MdLightbulbOutline } from 'react-icons/md';
 import { SiKnowledgebase, SiLevelsdotfyi } from 'react-icons/si';
 import { TiShoppingBag } from 'react-icons/ti';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const JobDetails = () => {
-    const { title, location, jobType, category, applicationDeadline, salaryRange, description, company, requirements, responsibilities, status, hr_email, hr_name, company_logo } = useLoaderData();
+    const { title, location, _id, jobType, category, applicationDeadline, salaryRange, description, company, requirements, responsibilities, status, hr_email, hr_name, company_logo } = useLoaderData();
 
     return (
         <div className="  bg-white min-h-screen">
@@ -24,7 +25,7 @@ const JobDetails = () => {
                                 <p className='flex items-center gap-1 text-md text-gray-400 font-normal'> <IoMdTime /> {applicationDeadline}</p>
                             </div>
                         </div>
-                        <button className="btn  hover:btn-success transition hover:-translate-y-1 btn-primary"> <img className='w-8' src="https://jobbox-nextjs-v3.vercel.app/_next/static/media/apply.ae2f83c4.svg" alt="" />Apply Now</button>
+                        <Link to={`/jobApply/:${_id}`}> <button className="btn  hover:btn-success transition hover:-translate-y-1 btn-primary"> <img className='w-8' src="https://jobbox-nextjs-v3.vercel.app/_next/static/media/apply.ae2f83c4.svg" alt="" />Apply Now</button></Link>
                     </div>
                     <div className="divider"></div>
                     <div className='md:flex gap-3'>
@@ -143,15 +144,36 @@ const JobDetails = () => {
                             <p><span className='text-xl font-semibold'>Communication:</span> <span className='text-xl leading-[32px] text-[#4F6169]'>  Communicate the results of UX activities within your product area to the design team department, cross-functional partners within your product area, and other interested Superformula team members using clear language that simplifies complexity.</span></p>
 
 
-                        </div>
-                        {/* right side */}
-                        <div className='md:w-4/12'>
 
+                            <div className="divider"></div>
+                            <div className='py-5 md:flex space-y-4 justify-between items-center my-5'>
+                                <div className='gap-3 mt-4 space-x-4'>
+                                    <Link to={`/jobApply/:${_id}`}> <button className="btn text-xl hover:btn-success transition hover:-translate-y-1 btn-primary"> Apply Now</button></Link>
+                                    <button className="btn text-xl hover:btn-neutral transition hover:-translate-y-1 btn-outline ">Save Job</button>
+                                </div>
+                                <div className='flex gap-2 items-center'>
+                                    <h3 className='text-start text-xl text-[#4D5C62] md:text-2xl  font-medium'>Share this</h3>
+                                    <div className='flex gap-1'>
+                                        <div className='border rounded-full p-2 items-center bg-[#E7F1FD]'><FaFacebookF size={24} /></div>
+                                        <div className='border rounded-full p-2 items-center bg-[#E7F1FD]'><FaTwitter  size={24}/> </div>
+                                        <div className='border rounded-full p-2 items-center bg-red-300'><GiVampireDracula size={24} /></div>
+                                        <div className='border rounded-full p-2 items-center bg-green-200'><FaWhatsapp size={24} /></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* right side */}
+                            <div className='md:w-4/12'>
+
+                            </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

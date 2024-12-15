@@ -25,7 +25,7 @@ const Navbar = () => {
     const Links = (< >
 
         <NavLink to='/' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Home</NavLink>
-        <NavLink to='/about' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>About</NavLink>
+        <NavLink to='/myApplication' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>My Application</NavLink>
         <NavLink to='/product' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Products</NavLink>
     </>)
 
