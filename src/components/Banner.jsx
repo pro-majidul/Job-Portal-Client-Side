@@ -16,7 +16,7 @@ const Banner = () => {
                         src={team1}
                         className="max-w-sm md:w-72 w-48 rounded-t-3xl rounded-br-3xl border-l-8 border-b-8 border-green-400 shadow-2xl" />
                     <motion.img
-                        animate={{ x: [40, 100, 40]}}
+                        animate={{ x: [40, 100, 40] }}
                         transition={{ duration: 4, repeat: Infinity }}
                         src={team2}
                         className="max-w-sm border-l-8 border-blue-500 border-b-8 rounded-t-3xl rounded-br-3xl w-48 md:w-72  shadow-2xl" />
@@ -28,8 +28,8 @@ const Banner = () => {
                         transition={{ duration: 2, delay: 0.9, ease: easeInOut, repeat: Infinity }}
                         className="text-5xl font-bold ">Latest Jobs for you!</motion.h1>
                     <p className="py-6 text-[#05264E]">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        Distinctively enable high-quality applications whereas customer directed ROI. Rapidiously parallel task end-to-end benefits and superior core competencies. Dramatically orchestrate world-class leadership via extensive results. Compellingly foster sustainable partnerships with 24/7 architectures. Interactively scale business vortals and enterprise-wide quality vectors.
+
                     </p>
                     <button className="btn btn-primary ">Get Started</button>
                 </div>
