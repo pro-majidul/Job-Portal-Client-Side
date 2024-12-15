@@ -33,7 +33,7 @@ const AddJob = () => {
                         timer: 1500
                     });
                 }
-                navigate('/myApplication')
+                navigate('/')
             })
 
     }
@@ -61,7 +61,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">Job Type</span>
                     </label>
-                    <select defaultValue="Pick a Job type" className="select input-bordered select-ghost w-full ">
+                    <select name='jobType' defaultValue="Pick a Job type" className="select input-bordered select-ghost w-full ">
                         <option disabled>Pick a Job type</option>
                         <option>Full-time</option>
                         <option>Intern</option>
@@ -73,7 +73,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">Job Field</span>
                     </label>
-                    <select defaultValue="Pick a Job Field" className="select select-ghost w-full input-bordered">
+                    <select name='category' defaultValue="Pick a Job Field" className="select select-ghost w-full input-bordered">
                         <option disabled>Pick a Job Field</option>
                         <option>Engineering</option>
                         <option>Marketing</option>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import UseAuth from '../hooks/UseAuth';
-import { renderTitle } from './../../node_modules/sweetalert2/src/utils/dom/renderers/renderTitle';
+
 
 const MyApplication = () => {
     const { user } = UseAuth();
@@ -10,7 +10,7 @@ const MyApplication = () => {
         fetch(`http://localhost:5000/job-application?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+               
                 setJobs(data);
                 setLoader(false)
             }).catch(() => {

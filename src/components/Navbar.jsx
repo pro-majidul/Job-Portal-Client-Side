@@ -27,6 +27,7 @@ const Navbar = () => {
         <NavLink to='/' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Home</NavLink>
         <NavLink to='/myApplication' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>My Application</NavLink>
         <NavLink to='/addjob' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>Add Jobs</NavLink>
+        <NavLink to='/myPostJobs' className={({ isActive }) => isActive ? 'btn bg-green-300' : 'btn'}>My Post Jobs</NavLink>
     </>)
 
 
