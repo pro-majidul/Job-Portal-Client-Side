@@ -15,7 +15,7 @@ const JobDetails = () => {
         <div className="  bg-white min-h-screen">
             <div className="text-center ">
                 <div className="">
-                    <img className='w-4/12 mx-auto' src={company_logo} alt="" />
+                    <img className='w-4/12 mx-auto'  src={company_logo} alt="" />
                     <div className='md:flex justify-between  items-center'>
                         <div>
                             <h1 className="md:text-5xl text-2xl font-bold">{title} Creator Success {jobType}</h1>
@@ -25,7 +25,7 @@ const JobDetails = () => {
                                 <p className='flex items-center gap-1 text-md text-gray-400 font-normal'> <IoMdTime /> {applicationDeadline}</p>
                             </div>
                         </div>
-                        <Link to={`/jobApply/:${_id}`}> <button className="btn  hover:btn-success transition hover:-translate-y-1 btn-primary"> <img className='w-8' src="https://jobbox-nextjs-v3.vercel.app/_next/static/media/apply.ae2f83c4.svg" alt="" />Apply Now</button></Link>
+                        <Link to={`/jobApply/${_id}`}> <button className="btn  hover:btn-success transition hover:-translate-y-1 btn-primary"> <img className='w-8' src="https://jobbox-nextjs-v3.vercel.app/_next/static/media/apply.ae2f83c4.svg" alt="" />Apply Now</button></Link>
                     </div>
                     <div className="divider"></div>
                     <div className='md:flex gap-3'>
@@ -96,7 +96,7 @@ const JobDetails = () => {
                                 <li className='text-xl text-start text-[#4F6169]'>Name : {hr_name}</li>
                             </ul>
                             <div>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5940.460034101766!2d-87.62483100265503!3d41.887910073977714!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca8b34afe61%3A0x6caeb5f721ca846!2s205%20N%20Michigan%20Ave%20Suit%20810%2C%20Chicago%2C%20IL%2060601!5e0!3m2!1svi!2sus!4v1734207432840!5m2!1svi!2sus" className='border-0 w-full' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5940.460034101766!2d-87.62483100265503!3d41.887910073977714!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca8b34afe61%3A0x6caeb5f721ca846!2s205%20N%20Michigan%20Ave%20Suit%20810%2C%20Chicago%2C%20IL%2060601!5e0!3m2!1svi!2sus!4v1734207432840!5m2!1svi!2sus" className='border-0 w-full' allowFullScreen loading="lazy" referrerPolicy='no-referrer'></iframe>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@ const JobDetails = () => {
                             <div className="divider"></div>
                             <div className='py-5 md:flex space-y-4 justify-between items-center my-5'>
                                 <div className='gap-3 mt-4 space-x-4'>
-                                    <Link to={`/jobApply/:${_id}`}> <button className="btn text-xl hover:btn-success transition hover:-translate-y-1 btn-primary"> Apply Now</button></Link>
+                                    <Link to={`/jobApply/${_id}`}> <button className="btn text-xl hover:btn-success transition hover:-translate-y-1 btn-primary"> Apply Now</button></Link>
                                     <button className="btn text-xl hover:btn-neutral transition hover:-translate-y-1 btn-outline ">Save Job</button>
                                 </div>
                                 <div className='flex gap-2 items-center'>

@@ -1,10 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import UseAuth from '../hooks/UseAuth';
 import Swal from 'sweetalert2'
 
 const JobApply = () => {
     const { id } = useParams();
+  const navigate = useNavigate()
     const { user } = UseAuth()
     const handelJobApply = e => {
         e.preventDefault();
@@ -16,7 +17,7 @@ const JobApply = () => {
 
         console.log(github, linkedIn, resume);
         const jobinfo = {
-            job_id: id,
+            job_id : id,
             applicant_email: user.email,
             github, linkedIn, resume,
         }
@@ -29,7 +30,7 @@ const JobApply = () => {
             body: JSON.stringify(jobinfo)
         }).then(res => res.json())
             .then(data => {
-                console.log(data);
+               
                 if(data. insertedId){
                     Swal.fire({
                         position: "top-end",
@@ -39,6 +40,8 @@ const JobApply = () => {
                         timer: 1500
                       });  
                 }
+                navigate('/myApplication')
+
             })
     }
 
