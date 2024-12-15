@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 
 const JobApply = () => {
     const { id } = useParams();
-  const navigate = useNavigate()
+    const navigate = useNavigate()
     const { user } = UseAuth()
     const handelJobApply = e => {
         e.preventDefault();
@@ -13,11 +13,8 @@ const JobApply = () => {
         const github = form.github.value;
         const linkedIn = form.linkedIn.value;
         const resume = form.resume.value;
-
-
-        console.log(github, linkedIn, resume);
         const jobinfo = {
-            job_id : id,
+            job_id: id,
             applicant_email: user.email,
             github, linkedIn, resume,
         }
@@ -30,19 +27,29 @@ const JobApply = () => {
             body: JSON.stringify(jobinfo)
         }).then(res => res.json())
             .then(data => {
-               
-                if(data. insertedId){
-                    Swal.fire({
+
+                if (data.insertedId) {
+                   return Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Your work has been saved",
+                        title: "Application success",
                         showConfirmButton: false,
                         timer: 1500
-                      });  
+                    });
                 }
                 navigate('/myApplication')
 
+            }).catch(error => {
+
+               return Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Application can not success",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
+            
     }
 
     return (
