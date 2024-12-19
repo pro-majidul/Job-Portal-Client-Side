@@ -5,24 +5,31 @@ import loginlottie from '../assets/login.json';
 import { toast } from 'react-toastify';
 import Social from '../components/Social';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const SignIn = () => {
 
     const { loginUser, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
-    const form = location?.state || '/' ;
+    const form = location?.state || '/';
 
     const handelsignin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-
+        
         loginUser(email, password)
-            .then(result => {
-                setUser(result.user)
+        .then(result => {
+            setUser(result.user)
+            const data = { email: email }
                 console.log(result.user);
                 toast.success('user login success')
+                axios.post('http://localhost:5000/jwt', data ,{
+                    withCredentials : true
+                })
+                    .then(res => console.log(res.data))
+                    .catch(error => console.log(error))
                 navigate(form)
 
 

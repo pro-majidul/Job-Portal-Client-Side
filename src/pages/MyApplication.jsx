@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import UseAuth from '../hooks/UseAuth';
+import axios from 'axios';
 
 
 const MyApplication = () => {
@@ -7,11 +8,21 @@ const MyApplication = () => {
     const [jobs, setJobs] = useState([])
     const [loader, setLoader] = useState(true)
     useEffect(() => {
-        fetch(`http://localhost:5000/job-application?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-               
-                setJobs(data);
+        // fetch(`http://localhost:5000/job-application?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+
+        //         setJobs(data);
+        //         setLoader(false)
+        //     }).catch(() => {
+        //         setLoader(false)
+        //     })
+
+        axios.get(`http://localhost:5000/job-application?email=${user.email}`, {
+            withCredentials : true,
+        })
+            .then(res => {
+                setJobs(res.data);
                 setLoader(false)
             }).catch(() => {
                 setLoader(false)
